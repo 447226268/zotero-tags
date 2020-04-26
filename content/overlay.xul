@@ -20,7 +20,7 @@
                 <menuitem
                     id="zotero-itemmenu-Addtags-help"
                     label="&Addtags-menu-help-label;"
-                    oncommand="alert('没什么可以帮助你的！');"/>
+                    oncommand="alert('本程序用于Zotero标签管理\n自动检索所有者、发表情况、文章类型、研究对象、来源情况');"/>
             </menupopup>
         </menu>
     </popup>

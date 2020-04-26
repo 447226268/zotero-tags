@@ -20,18 +20,16 @@ const Addtags = Zotero.Addtags || new class { // tslint:disable-line:variable-na
 
   public async  checkitemsTags() {
     if (this.initialized) {
-      const str1 = '所有者：'
-      const str2 = '发表情况：'
-      const str3 = '文章类型：'
+      const str_tags : string[] = ['所有者：', '发表情况：', '文章类型：', '研究对象：', '来源：']
 
       const zoteroPane = Zotero.getActiveZoteroPane()
       const collection = zoteroPane.getSelectedCollection()
       const items = collection.getChildItems()
       for (const item of items){
-      this.updata(item, str1)
-      this.updata(item, str2)
-      this.updata(item, str3)
-    }
+        for (const str_tag of str_tags){
+          this.updata(item, str_tag)
+        }
+      }
   }
 }
 
@@ -45,7 +43,7 @@ const Addtags = Zotero.Addtags || new class { // tslint:disable-line:variable-na
         }
     }
     if (n === 0) {
-        newTags.push(checkTag +  'Miss!')
+        newTags.push(checkTag +  'Missing')
         item.setTags(newTags)
         await item.save()
     }
