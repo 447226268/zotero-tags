@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://zotero-tags/skin/overlay.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://zotero-tags/locale/zotero-tags.dtd">
+
+<overlay id="zotero-tags-overlay"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<!-- Include the main extension logic -->
+    <script src="chrome://zotero/content/include.js"/>
+    <script src="chrome://zotero-tags/content/webpack.js"/>
+    <script src="chrome://zotero-tags/content/Addtags.js"/>
+	<popup
+        id="zotero-itemmenu">
+        <menu class="menu-iconic" image="chrome://zotero-tags/skin/default/icon.jpg" id="zotero-itemmenu-Addtags" label="&zotero-itemmenu-Addtags;">   
+            <menupopup id="zotero-itemmenu-Addtags-menupopup">
+            <menuitem
+                    id="zotero-itemmenu-Addtags-check"
+                    label="&Addtags-menu-check-label;"
+                    oncommand="Zotero.Addtags.checkitemsTags();"/>
+                <menuitem
+                    id="zotero-itemmenu-Addtags-help"
+                    label="&Addtags-menu-help-label;"
+                    oncommand="alert('没什么可以帮助你的！');"/>
+            </menupopup>
+        </menu>
+    </popup>
+</overlay>

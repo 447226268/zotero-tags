@@ -1,0 +1,42 @@
+{
+  "name": "zotero-tags",
+  "version": "0.0.1",
+  "description": "Add tags",
+  "scripts": {
+    "lint": "tslint -t stylish --project .",
+    "prebuild": "npm run lint",
+    "build": "webpack",
+    "postbuild": "zotero-plugin-zipup build zotero-tags",
+    "release": "zotero-plugin-release",
+    "postversion": "git push --follow-tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/447226268/zotero-tags.git"
+  },
+  "author": {
+    "name": "zhouxin",
+    "email": "zx15027188621@163.com"
+  },
+  "bugs": {
+    "url": "https://github.com/447226268/zotero-tags/issues"
+  },
+  "homepage": "https://github.com/447226268/zotero-tags",
+  "dependencies": {
+    "circular-dependency-plugin": "^5.2.0",
+    "post-compile-webpack-plugin": "^0.1.2",
+    "rimraf": "^3.0.1",
+    "ts-loader": "^6.2.1",
+    "ts-node": "^8.6.2",
+    "tslint": "^6.0.0",
+    "typescript": "^3.7.5",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "zotero-plugin": "0.0.98"
+  },
+  "xpi": {
+    "name": "Tags for Zotero",
+    "updateLink": "https://github.com/447226268/zotero-tags/releases/download/v{version}/zotero-zotero-tags-{version}.xpi",
+    "releaseURL": "https://github.com/447226268/zotero-tags/releases/download/release/"
+  }
+}
